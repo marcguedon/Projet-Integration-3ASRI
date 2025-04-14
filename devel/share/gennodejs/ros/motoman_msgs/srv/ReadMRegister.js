@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_msgs/share/gennodejs/ros/motoman_msgs/srv/ReadMRegister.js

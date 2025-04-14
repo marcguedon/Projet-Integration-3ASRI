@@ -1,5 +1,0 @@
-motoman/motoman_gp20hl_support
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_gp20hl_support/cmake.lock /home/etudiant/Projet-Integration-3ASRI/devel/./cmake.lock
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_gp20hl_support/share/motoman_gp20hl_support/cmake/motoman_gp20hl_supportConfig.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_gp20hl_support/cmake/motoman_gp20hl_supportConfig.cmake
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_gp20hl_support/share/motoman_gp20hl_support/cmake/motoman_gp20hl_supportConfig-version.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_gp20hl_support/cmake/motoman_gp20hl_supportConfig-version.cmake
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_gp20hl_support/lib/pkgconfig/motoman_gp20hl_support.pc /home/etudiant/Projet-Integration-3ASRI/devel/lib/pkgconfig/motoman_gp20hl_support.pc

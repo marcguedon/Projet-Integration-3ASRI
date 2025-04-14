@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_msgs/share/common-lisp/ros/motoman_msgs/srv/ReadGroupIO.lisp

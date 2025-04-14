@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_msgs/share/roseus/ros/motoman_msgs/srv/WriteGroupIO.l

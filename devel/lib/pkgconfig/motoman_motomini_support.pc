@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_motomini_support/lib/pkgconfig/motoman_motomini_support.pc

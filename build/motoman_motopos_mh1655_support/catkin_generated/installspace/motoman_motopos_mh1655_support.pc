@@ -1,8 +1,0 @@
-prefix=/home/etudiant/Projet-Integration-3ASRI/install
-
-Name: motoman_motopos_mh1655_support
-Description: Description of motoman_motopos_mh1655_support
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

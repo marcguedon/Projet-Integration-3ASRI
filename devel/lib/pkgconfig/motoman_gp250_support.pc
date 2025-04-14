@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_gp250_support/lib/pkgconfig/motoman_gp250_support.pc

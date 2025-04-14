@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc20_support/lib/pkgconfig/motoman_hc20_support.pc

@@ -1,8 +1,0 @@
-prefix=/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_gp165r_support
-
-Name: motoman_gp165r_support
-Description: Description of motoman_gp165r_support
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

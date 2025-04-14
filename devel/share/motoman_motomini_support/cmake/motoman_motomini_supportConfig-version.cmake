@@ -1,1 +1,0 @@
-/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_motomini_support/share/motoman_motomini_support/cmake/motoman_motomini_supportConfig-version.cmake
