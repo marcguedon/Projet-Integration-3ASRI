@@ -15,25 +15,25 @@ cd Projet-Integration-3ASRI/src
 git clone https://github.com/ros-industrial/motoman.git
 ```
 
-Maintenant pour les dépendances sont installées, il faut build le package `hc10_moveit_config`.
+Maintenant que les dépendances sont installées, il faut build le package `hc10_moveit_config`.
 ```console
 cd ..
 catkin build
 ```
 
-Il est a présent possible de sourcerle fichier `devel/setup.bash` qui a été généré.
+Il est a présent possible de sourcer le fichier `devel/setup.bash` qui a été généré.
 ```console
 . devel/setup.bash
 ```
 
-Pour s'assurer que le package est correctement build, vous pouvez lancer le launch demo:
-```
+Pour s'assurer que le package est correctement build, vous pouvez lancer le launch file de démonstration:
+```console
 roslaunch hc10_moveit_config demo.launch
 ```
 
 ## Génération du package MoveIt
 
-Pour générer le package MoveIt du robot HC10, lancer le setup assitant de MoveIt. Une nouvelle fenêtre doit s'ouvrir.
+Pour générer le package MoveIt du robot HC10, lancer le setup assistant de MoveIt. Une nouvelle fenêtre doit s'ouvrir.
 ```console
 roslaunch moveit_setup_assistant setup_assistant.launch
 ```
