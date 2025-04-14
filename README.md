@@ -31,6 +31,15 @@ Pour s'assurer que le package est correctement build, vous pouvez lancer le laun
 roslaunch hc10_moveit_config demo.launch
 ```
 
+### Utilisation de ROS (et du package) dans un terminal
+
+A chaque fois qu'un nouveau terminal est ouvert et que vous voulez utiliser une commande ROS (avec notamment notre package), il faut sourcer les fichiers `.bash` à la racine du projet.
+```console
+cd /home/etudiant/Projet-Integration-3ASRI
+. /opt/ros/noetic/setup.bash
+. devel/setup.bash
+```
+
 ## Génération du package MoveIt
 
 Pour générer le package MoveIt du robot HC10, lancer le setup assistant de MoveIt. Une nouvelle fenêtre doit s'ouvrir.
