@@ -1,0 +1,5 @@
+universal_robot/ur_gazebo
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur_gazebo/cmake.lock /home/etudiant/Projet-Integration-3ASRI/devel/./cmake.lock
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur_gazebo/share/ur_gazebo/cmake/ur_gazeboConfig.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/ur_gazebo/cmake/ur_gazeboConfig.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur_gazebo/share/ur_gazebo/cmake/ur_gazeboConfig-version.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/ur_gazebo/cmake/ur_gazeboConfig-version.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur_gazebo/lib/pkgconfig/ur_gazebo.pc /home/etudiant/Projet-Integration-3ASRI/devel/lib/pkgconfig/ur_gazebo.pc

@@ -12,5 +12,4 @@
         launch-prefix="$(arg launch_prefix)"
         required="true"
         output="screen" />
-
 </launch>

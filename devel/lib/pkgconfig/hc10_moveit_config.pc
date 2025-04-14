@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/hc10_moveit_config/lib/pkgconfig/hc10_moveit_config.pc

@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur7e_moveit_config/lib/pkgconfig/ur7e_moveit_config.pc

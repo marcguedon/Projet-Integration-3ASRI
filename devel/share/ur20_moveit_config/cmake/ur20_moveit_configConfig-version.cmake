@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur20_moveit_config/share/ur20_moveit_config/cmake/ur20_moveit_configConfig-version.cmake

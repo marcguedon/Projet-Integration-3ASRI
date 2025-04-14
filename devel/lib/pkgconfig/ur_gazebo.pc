@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur_gazebo/lib/pkgconfig/ur_gazebo.pc

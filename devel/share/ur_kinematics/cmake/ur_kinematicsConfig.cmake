@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/ur_kinematics/share/ur_kinematics/cmake/ur_kinematicsConfig.cmake
