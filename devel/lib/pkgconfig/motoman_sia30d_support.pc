@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_sia30d_support/lib/pkgconfig/motoman_sia30d_support.pc

@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_msgs/lib/python3/dist-packages/motoman_msgs/msg/__init__.py

@@ -1,0 +1,5 @@
+motoman/motoman_hc20_support
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc20_support/cmake.lock /home/etudiant/Projet-Integration-3ASRI/devel/./cmake.lock
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc20_support/share/motoman_hc20_support/cmake/motoman_hc20_supportConfig.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_hc20_support/cmake/motoman_hc20_supportConfig.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc20_support/share/motoman_hc20_support/cmake/motoman_hc20_supportConfig-version.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_hc20_support/cmake/motoman_hc20_supportConfig-version.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc20_support/lib/pkgconfig/motoman_hc20_support.pc /home/etudiant/Projet-Integration-3ASRI/devel/lib/pkgconfig/motoman_hc20_support.pc

@@ -1,0 +1,5 @@
+motoman/motoman_hc10_support
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc10_support/cmake.lock /home/etudiant/Projet-Integration-3ASRI/devel/./cmake.lock
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc10_support/share/motoman_hc10_support/cmake/motoman_hc10_supportConfig.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_hc10_support/cmake/motoman_hc10_supportConfig.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc10_support/share/motoman_hc10_support/cmake/motoman_hc10_supportConfig-version.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_hc10_support/cmake/motoman_hc10_supportConfig-version.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_hc10_support/lib/pkgconfig/motoman_hc10_support.pc /home/etudiant/Projet-Integration-3ASRI/devel/lib/pkgconfig/motoman_hc10_support.pc

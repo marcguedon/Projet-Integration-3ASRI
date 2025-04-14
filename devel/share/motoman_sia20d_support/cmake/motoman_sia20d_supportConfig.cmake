@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_sia20d_support/share/motoman_sia20d_support/cmake/motoman_sia20d_supportConfig.cmake

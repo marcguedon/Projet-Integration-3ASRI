@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_mh50_support/lib/pkgconfig/motoman_mh50_support.pc

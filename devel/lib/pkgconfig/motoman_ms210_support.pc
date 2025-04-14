@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_ms210_support/lib/pkgconfig/motoman_ms210_support.pc

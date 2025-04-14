@@ -1,0 +1,1 @@
+Je ne sais pas si le fichier hc10_robot.urdf sera utile ou non, il est donc dans la racine du projet. N'hésitez pas à le déplacer si nécessaire.

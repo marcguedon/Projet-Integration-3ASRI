@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_msgs/share/common-lisp/ros/motoman_msgs/msg/_package_DynamicJointsGroup.lisp

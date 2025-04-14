@@ -1,0 +1,5 @@
+motoman/motoman_resources
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_resources/cmake.lock /home/etudiant/Projet-Integration-3ASRI/devel/./cmake.lock
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_resources/share/motoman_resources/cmake/motoman_resourcesConfig-version.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_resources/cmake/motoman_resourcesConfig-version.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_resources/share/motoman_resources/cmake/motoman_resourcesConfig.cmake /home/etudiant/Projet-Integration-3ASRI/devel/share/motoman_resources/cmake/motoman_resourcesConfig.cmake
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_resources/lib/pkgconfig/motoman_resources.pc /home/etudiant/Projet-Integration-3ASRI/devel/lib/pkgconfig/motoman_resources.pc

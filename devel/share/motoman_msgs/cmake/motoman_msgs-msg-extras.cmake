@@ -1,0 +1,1 @@
+/home/etudiant/Projet-Integration-3ASRI/devel/.private/motoman_msgs/share/motoman_msgs/cmake/motoman_msgs-msg-extras.cmake
