@@ -2,4 +2,24 @@
 <robot name="motoman_hc10" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find hc10_moveit_config)/urdf/hc10_macro.xacro" />
   <xacro:motoman_hc10 prefix=""/>
+  <xacro:include filename="$(find hc10_moveit_config)/urdf/kinect.urdf.xacro" />
+  <xacro:sensor_hc10 prefix=""/>
+
+  <link name="camera_depth_frame">
+    <visual>
+      <geometry>
+        <box size="0.05 0.2 0.05"/>  
+      </geometry> 
+      <material name="Kinect_gray">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material> 
+    </visual>
+  </link>
+
+  <!-- Attach Kinect to base -->
+  <joint name="tool0-camera" type="fixed">
+    <origin xyz="0 0 -0.130" rpy="${pi} 0 0"/>
+    <parent link="tool0"/>
+    <child link="camera_depth_frame"/>
+  </joint>
 </robot>
