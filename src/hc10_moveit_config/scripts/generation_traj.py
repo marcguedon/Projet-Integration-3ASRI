@@ -123,7 +123,7 @@ class MoveGroupPythonInterfaceTutorial(object):
         ## Instantiate a `PlanningSceneInterface`_ object.  This provides a remote interface
         ## for getting, setting, and updating the robot's internal understanding of the
         ## surrounding world:
-        scene = moveit_commander.PlanningSceneInterface()
+        scene = moveit_commander.PlanningSceneInterface(synchronous=True)
 
         ## Instantiate a `MoveGroupCommander`_ object.  This object is an interface
         ## to a planning group (group of joints).  In this tutorial the group is the primary
@@ -369,6 +369,32 @@ class MoveGroupPythonInterfaceTutorial(object):
         # If we exited the while loop without returning then we timed out
         return False
         ## END_SUB_TUTORIAL
+    # def add_box_test(self, timeout=4):
+    #     # Copy class variables to local variables to make the web tutorials more clear.
+    #     # In practice, you should use the class variables directly unless you have a good
+    #     # reason not to.
+    #     box_name = self.box_name
+    #     scene = self.scene
+
+    #     ## BEGIN_SUB_TUTORIAL add_box
+    #     ##
+    #     ## Adding Objects to the Planning Scene
+    #     ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #     ## First, we will create a box in the planning scene between the fingers:
+    #     box_pose = geometry_msgs.msg.PoseStamped()
+    #     box_pose.header.frame_id = "base_link"
+    #     box_pose.pose.orientation.w = 1.0
+    #     box_pose.pose.position.x = 0
+    #     box_pose.pose.position.y = 0.6
+    #     box_pose.pose.position.z = 0.88 # above the panda_hand frame
+    #     box_name = "box_test"
+    #     scene.add_box(box_name, box_pose, size=(0.2, 0.2, 0.2))
+
+    #     ## END_SUB_TUTORIAL
+    #     # Copy local variables back to class variables. In practice, you should use the class
+    #     # variables directly unless you have a good reason not to.
+    #     print("Objects in the scene : ",scene.get_known_object_names())
+    #     return self.wait_for_state_update(box_is_known=True, timeout=timeout)
 
     def add_box(self, timeout=4):
         # Copy class variables to local variables to make the web tutorials more clear.
@@ -383,17 +409,47 @@ class MoveGroupPythonInterfaceTutorial(object):
         ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         ## First, we will create a box in the planning scene between the fingers:
         box_pose = geometry_msgs.msg.PoseStamped()
-        box_pose.header.frame_id = "panda_hand"
+        box_pose.header.frame_id = "base_link"
         box_pose.pose.orientation.w = 1.0
-        box_pose.pose.position.z = 0.11  # above the panda_hand frame
+        box_pose.pose.position.x = 0
+        box_pose.pose.position.y = 0.6
+        box_pose.pose.position.z = 0.1 # above the panda_hand frame
         box_name = "box"
-        scene.add_box(box_name, box_pose, size=(0.075, 0.075, 0.075))
+        scene.add_box(box_name, box_pose, size=(0.2, 0.2, 0.2))
 
         ## END_SUB_TUTORIAL
         # Copy local variables back to class variables. In practice, you should use the class
         # variables directly unless you have a good reason not to.
         self.box_name = box_name
+        print("Objects in the scene : ",scene.get_known_object_names())
         return self.wait_for_state_update(box_is_known=True, timeout=timeout)
+
+    # def add_ground(self, timeout=4):
+    #     # Copy class variables to local variables to make the web tutorials more clear.
+    #     # In practice, you should use the class variables directly unless you have a good
+    #     # reason not to.
+    #     scene = self.scene
+
+    #     ## BEGIN_SUB_TUTORIAL add_box
+    #     ##
+    #     ## Adding Objects to the Planning Scene
+    #     ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #     ## First, we will create a box in the planning scene between the fingers:
+    #     box_pose = geometry_msgs.msg.PoseStamped()
+    #     box_pose.header.frame_id = "base_link"
+    #     box_pose.pose.orientation.w = 1.0
+    #     box_pose.pose.position.x = 0
+    #     box_pose.pose.position.y = 0.6
+    #     box_pose.pose.position.z = -0.01 # above the panda_hand frame
+    #     ground_name = "ground_plane"
+    #     scene.add_box(ground_name, box_pose, size=(1.9, 1.9, 0.01))
+
+    #     ## END_SUB_TUTORIAL
+    #     # Copy local variables back to class variables. In practice, you should use the class
+    #     # variables directly unless you have a good reason not to.
+    #     self.ground_name = ground_name
+    #     print("Objects in the scene : ",scene.get_known_object_names())
+    #     return self.wait_for_state_update(box_is_known=True, timeout=timeout)
 
     def attach_box(self, timeout=4):
         # Copy class variables to local variables to make the web tutorials more clear.
@@ -491,11 +547,12 @@ def main():
         )
         tutorial = MoveGroupPythonInterfaceTutorial()
 
-        '''input(
+        input(
             "============ Press `Enter` to execute a movement using a joint state goal ..."
         )
-        joint_goal=tutorial.set_angle_joints(65,78,37,32,127,-69)
+        '''joint_goal=tutorial.set_angle_joints(65,78,37,32,127,-69)
         tutorial.go_to_joint_state(joint_goal)
+        input("Press enter to go to next position")
 
         joint_goal=tutorial.set_angle_joints(131,62,54,-123,87,-15)
         tutorial.go_to_joint_state(joint_goal)
@@ -512,6 +569,12 @@ def main():
         joint_goal=tutorial.set_angle_joints(75,35,57,1,-25,104)
         tutorial.go_to_joint_state(joint_goal)
         input("Press enter to go to end treatment")'''
+        # tutorial.add_box_test()
+        input("============ Press `Enter` to add a box to the planning scene ...")
+        tutorial.add_box()
+
+        # input("============ Press `Enter` to add a ground to the planning scene ...")
+        # tutorial.add_ground()
 
         #input("============ Going to five pose goal ...")
         waypoints = []
@@ -575,40 +638,39 @@ def main():
         #tutorial.go_to_pose_goal(pose_goal)
 
         
-        #input("Press enter to end treatment")
+        input("Press enter to end treatment")
         
 
-        input("============ Press `Enter` to plan and display a Cartesian path ...")
-        cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
-        input("Press enter to end treatment")
+        #input("============ Press `Enter` to plan and display a Cartesian path ...")
+        #cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
+        #input("Press enter to end treatment")
 
-        '''input(
-            "============ Press `Enter` to display a saved trajectory (this will replay the Cartesian path)  ..."
-        )
-        tutorial.display_trajectory(cartesian_plan)
+        # input(
+        #     "============ Press `Enter` to display a saved trajectory (this will replay the Cartesian path)  ..."
+        # )
+        # tutorial.display_trajectory(cartesian_plan)
 
-        input("============ Press `Enter` to execute a saved path ...")
-        tutorial.execute_plan(cartesian_plan)
+        # input("============ Press `Enter` to execute a saved path ...")
+        # tutorial.execute_plan(cartesian_plan)
 
-        input("============ Press `Enter` to add a box to the planning scene ...")
-        tutorial.add_box()
 
-        input("============ Press `Enter` to attach a Box to the Panda robot ...")
-        tutorial.attach_box()
 
-        input(
-            "============ Press `Enter` to plan and execute a path with an attached collision object ..."
-        )
-        cartesian_plan, fraction = tutorial.plan_cartesian_path(scale=-1)
-        tutorial.execute_plan(cartesian_plan)
+        # input("============ Press `Enter` to attach a Box to the Panda robot ...")
+        # tutorial.attach_box()
 
-        input("============ Press `Enter` to detach the box from the Panda robot ...")
-        tutorial.detach_box()
+        # input(
+        #     "============ Press `Enter` to plan and execute a path with an attached collision object ..."
+        # )
+        # cartesian_plan, fraction = tutorial.plan_cartesian_path(scale=-1)
+        # tutorial.execute_plan(cartesian_plan)
 
-        input(
-            "============ Press `Enter` to remove the box from the planning scene ..."
-        )
-        tutorial.remove_box()'''
+        # input("============ Press `Enter` to detach the box from the Panda robot ...")
+        # tutorial.detach_box()
+
+        # input(
+        #     "============ Press `Enter` to remove the box from the planning scene ..."
+        # )
+        # tutorial.remove_box()
 
         print("============ Python tutorial demo complete!")
     except rospy.ROSInterruptException:
