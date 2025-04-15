@@ -11,7 +11,6 @@
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="hc10_arm">
         <joint name="virtual_joint"/>
-        <joint name="base_link-base"/>
         <joint name="joint_1_s"/>
         <joint name="joint_2_l"/>
         <joint name="joint_3_u"/>
