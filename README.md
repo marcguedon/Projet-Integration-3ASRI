@@ -18,6 +18,7 @@ git clone https://github.com/ros-industrial/motoman.git
 Maintenant que les dépendances sont installées, il faut build le package `hc10_moveit_config`.
 ```console
 cd ..
+. /opt/ros/noetic/setup.bash
 catkin build
 ```
 
