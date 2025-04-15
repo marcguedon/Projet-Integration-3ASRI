@@ -20,6 +20,7 @@ class Talker():
             for p in points:
                 #TODO: transformer les points en repère monde en fonction de la pos et de la rot
                 point = [p[0],p[1],p[2]]
+                
 
                 # print("Point added")
                 self.object.append([p[0],p[1],p[2]])
@@ -27,10 +28,12 @@ class Talker():
 
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
+        header.frame_id = "camera_depth_frame"
 
         cloud = pc2.create_cloud_xyz32(header, self.object)
         
         self.publisher.publish(cloud)
+        print(cloud)
 
 if __name__ == '__main__':
     node = Talker()
