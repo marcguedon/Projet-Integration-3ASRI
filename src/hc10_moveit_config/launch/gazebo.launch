@@ -26,7 +26,7 @@
     respawn="false" output="screen" />
   
   <node name="spawn_cube" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
-        args="-urdf -param cube_description -model scene_cube -x 0.6 -y 0 -z 0.1"/>
+        args="-urdf -param cube_description -model scene_cube -x 0 -y 0.6 -z 0.1"/>
 
 
   <!-- Load joint controller parameters for Gazebo -->
