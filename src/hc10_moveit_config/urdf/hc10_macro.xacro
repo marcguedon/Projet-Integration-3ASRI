@@ -2,21 +2,6 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="motoman_hc10" params="prefix">
     <xacro:include filename="$(find motoman_resources)/urdf/common_materials.xacro"/>
-
-    <xacro:macro name="control" params="joint">
-        <transmission name="${joint}_transmission">
-            <type>transmission_interface/SimpleTransmission</type>
-            <!-- The EffortJointInterface works best with Gazebo using torques to actuate the joints -->
-            <joint name="${joint}">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${joint}_motor">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-
     <!-- link list -->
     <link name="${prefix}base_link">
       <visual>
@@ -32,7 +17,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}base_link">
@@ -56,7 +41,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}link_1_s">
@@ -80,7 +65,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}link_2_l">
@@ -104,7 +89,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}link_3_u">
@@ -128,7 +113,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}link_4_r">
@@ -152,7 +137,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}link_5_b">
@@ -176,7 +161,7 @@
       </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="3.06" />
+        <mass value="0.1" />
         <inertia ixx="0.3" ixy="0.0" ixz="0.0" iyy="0.3" iyz="0.0" izz="0.3" />
       </inertial>
       <gazebo reference="${prefix}link_6_t">
@@ -195,9 +180,7 @@
       <origin xyz="0 0 0.275" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="368.48" velocity="${radians(130)}"/>
-      <dynamics damping="1.0" friction="1.0"/>
     </joint>
-    <xacro:control joint="${prefix}joint_1_s"/>
 
     <joint name="${prefix}joint_2_l" type="revolute">
       <parent link="${prefix}link_1_s"/>
@@ -205,9 +188,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 1 0" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="368.48" velocity="${radians(130)}"/>
-      <dynamics damping="1.0" friction="1.0"/>
     </joint>
-    <xacro:control joint="${prefix}joint_2_l"/>
 
     <joint name="${prefix}joint_3_u" type="revolute">
       <parent link="${prefix}link_2_l"/>
@@ -215,9 +196,7 @@
       <origin xyz="0 0 0.700" rpy="0 0 0" />
       <axis xyz="0 -1 0" />
       <limit lower="${radians(-5)}" upper="${radians(355)}" effort="141.12" velocity="${radians(180)}"/>
-      <dynamics damping="1.0" friction="1.0"/>
     </joint>
-    <xacro:control joint="${prefix}joint_3_u"/>
 
     <joint name="${prefix}joint_4_r" type="revolute">
       <parent link="${prefix}link_3_u"/>
@@ -225,9 +204,7 @@
       <origin xyz="0 0 -0.500" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="39.20" velocity="${radians(180)}"/>
-      <dynamics damping="1.0" friction="1.0"/>
     </joint>
-    <xacro:control joint="${prefix}joint_4_r"/>
 
     <joint name="${prefix}joint_5_b" type="revolute">
       <parent link="${prefix}link_4_r"/>
@@ -235,9 +212,7 @@
       <origin xyz="0 0.162 0" rpy="0 0 0" />
       <axis xyz="0 -1 0" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="31.36" velocity="${radians(250)}"/>
-      <dynamics damping="1.0" friction="1.0"/>
     </joint>
-    <xacro:control joint="${prefix}joint_5_b"/>
 
     <joint name="${prefix}joint_6_t" type="revolute">
       <parent link="${prefix}link_5_b"/>
@@ -245,9 +220,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="31.36" velocity="${radians(250)}"/>
-      <dynamics damping="1.0" friction="1.0"/>
     </joint>
-    <xacro:control joint="${prefix}joint_6_t"/>
 
     <joint name="${prefix}joint_6_t-tool0" type="fixed">
       <origin xyz="0 0 -0.130" rpy="${pi} 0 0"/>
@@ -266,16 +239,7 @@
       <child link="${prefix}base"/>
     </joint>
 
-    <link name="world"/>
-    <joint name="world_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0"/>  <!-- Place the robot wherever you want -->
-      <parent link="world"/>
-      <child link="${prefix}base_link"/>  <!-- replace this name with your robot's base link -->
-    </joint>
-  </xacro:macro>
 
-  <gazebo>
-      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
-  </gazebo>
+  </xacro:macro>
 
 </robot>
