@@ -491,12 +491,11 @@ def main():
         )
         tutorial = MoveGroupPythonInterfaceTutorial()
 
-        input(
+        '''input(
             "============ Press `Enter` to execute a movement using a joint state goal ..."
         )
-        '''joint_goal=tutorial.set_angle_joints(65,78,37,32,127,-69)
+        joint_goal=tutorial.set_angle_joints(65,78,37,32,127,-69)
         tutorial.go_to_joint_state(joint_goal)
-        input("Press enter to go to next position")
 
         joint_goal=tutorial.set_angle_joints(131,62,54,-123,87,-15)
         tutorial.go_to_joint_state(joint_goal)
@@ -576,12 +575,12 @@ def main():
         #tutorial.go_to_pose_goal(pose_goal)
 
         
-        input("Press enter to end treatment")
+        #input("Press enter to end treatment")
         
 
-        #input("============ Press `Enter` to plan and display a Cartesian path ...")
-        #cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
-        #input("Press enter to end treatment")
+        input("============ Press `Enter` to plan and display a Cartesian path ...")
+        cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
+        input("Press enter to end treatment")
 
         '''input(
             "============ Press `Enter` to display a saved trajectory (this will replay the Cartesian path)  ..."
