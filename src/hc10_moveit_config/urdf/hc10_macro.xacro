@@ -180,6 +180,7 @@
       <origin xyz="0 0 0.275" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="368.48" velocity="${radians(130)}"/>
+      <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
     <joint name="${prefix}joint_2_l" type="revolute">
@@ -188,6 +189,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 1 0" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="368.48" velocity="${radians(130)}"/>
+      <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
     <joint name="${prefix}joint_3_u" type="revolute">
@@ -196,6 +198,7 @@
       <origin xyz="0 0 0.700" rpy="0 0 0" />
       <axis xyz="0 -1 0" />
       <limit lower="${radians(-5)}" upper="${radians(355)}" effort="141.12" velocity="${radians(180)}"/>
+      <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
     <joint name="${prefix}joint_4_r" type="revolute">
@@ -204,6 +207,7 @@
       <origin xyz="0 0 -0.500" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="39.20" velocity="${radians(180)}"/>
+      <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
     <joint name="${prefix}joint_5_b" type="revolute">
@@ -212,6 +216,7 @@
       <origin xyz="0 0.162 0" rpy="0 0 0" />
       <axis xyz="0 -1 0" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="31.36" velocity="${radians(250)}"/>
+      <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
     <joint name="${prefix}joint_6_t" type="revolute">
@@ -220,6 +225,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="31.36" velocity="${radians(250)}"/>
+      <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
     <joint name="${prefix}joint_6_t-tool0" type="fixed">
