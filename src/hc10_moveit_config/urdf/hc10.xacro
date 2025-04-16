@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="motoman_hc10" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find hc10_moveit_config)/urdf/hc10_macro.xacro" />
+  <xacro:include filename="$(find hc10_moveit_config)/urdf/hc10_gazebo.xacro" />
   <xacro:motoman_hc10 prefix=""/>
+  <xacro:gazebo_hc10 prefix=""/>
 </robot>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="gazebo_hc10" params="prefix">
+
+    <xacro:include filename="$(find motoman_resources)/urdf/common_materials.xacro"/>
+
+    <xacro:macro name="control" params="joint">
+        <transmission name="${joint}_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <!-- The EffortJointInterface works best with Gazebo using torques to actuate the joints -->
+            <joint name="${joint}">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${joint}_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+
+    <xacro:control joint="${prefix}joint_1_s"/>
+    <xacro:control joint="${prefix}joint_2_l"/>
+    <xacro:control joint="${prefix}joint_3_u"/>
+    <xacro:control joint="${prefix}joint_4_r"/>
+    <xacro:control joint="${prefix}joint_5_b"/>
+    <xacro:control joint="${prefix}joint_6_t"/>
+
+    <link name="world"/>
+    <joint name="world_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>  <!-- Place the robot wherever you want -->
+      <parent link="world"/>
+      <child link="${prefix}base_link"/>  <!-- replace this name with your robot's base link -->
+    </joint>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+    </gazebo>
+  </xacro:macro>
+</robot>
