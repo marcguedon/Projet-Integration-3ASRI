@@ -28,7 +28,7 @@ class Talker():
 
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
-        header.frame_id = "camera_depth_frame"
+        header.frame_id = "base_link"
 
         cloud = pc2.create_cloud_xyz32(header, self.object)
         
