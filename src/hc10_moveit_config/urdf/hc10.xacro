@@ -4,4 +4,24 @@
   <xacro:include filename="$(find hc10_moveit_config)/urdf/hc10_gazebo.xacro" />
   <xacro:motoman_hc10 prefix=""/>
   <xacro:gazebo_hc10 prefix=""/>
+  <xacro:include filename="$(find hc10_moveit_config)/urdf/kinect.urdf.xacro" />
+  <xacro:sensor_hc10 prefix=""/>
+
+  <link name="camera_depth_frame">
+    <visual>
+      <geometry>
+        <box size="0.2 0.05 0.02"/>  
+      </geometry> 
+      <material name="Kinect_gray">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material> 
+    </visual>
+  </link>
+
+  <!-- Attach Kinect to base -->
+  <joint name="tool0-camera" type="fixed">
+    <origin xyz="0 0 0.01" rpy="${pi} ${-pi/2} 0"/>
+    <parent link="tool0"/>
+    <child link="camera_depth_frame"/>
+  </joint>
 </robot>

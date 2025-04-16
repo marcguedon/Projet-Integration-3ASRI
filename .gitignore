@@ -3,3 +3,4 @@ logs/
 devel/
 .catkin_tools/
 motoman/
+object.txt
