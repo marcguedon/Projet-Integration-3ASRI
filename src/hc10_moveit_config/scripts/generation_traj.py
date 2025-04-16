@@ -244,7 +244,7 @@ class MoveGroupPythonInterfaceTutorial(object):
         # In practice, you should use the class variables directly unless you have a good
         # reason not to.
         move_group = self.move_group
-
+        print(waypoints)
         ## BEGIN_SUB_TUTORIAL plan_cartesian_path
         ##
         ## Cartesian Paths
@@ -425,32 +425,32 @@ class MoveGroupPythonInterfaceTutorial(object):
         # print("Objects in the scene : ",scene.get_known_object_names())
         return self.wait_for_state_update(box_is_known=True, timeout=timeout)
 
-    # def add_ground(self, timeout=4):
-    #     # Copy class variables to local variables to make the web tutorials more clear.
-    #     # In practice, you should use the class variables directly unless you have a good
-    #     # reason not to.
-    #     scene = self.scene
+    def add_ground(self, timeout=4):
+        # Copy class variables to local variables to make the web tutorials more clear.
+        # In practice, you should use the class variables directly unless you have a good
+        # reason not to.
+        scene = self.scene
 
-    #     ## BEGIN_SUB_TUTORIAL add_box
-    #     ##
-    #     ## Adding Objects to the Planning Scene
-    #     ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    #     ## First, we will create a box in the planning scene between the fingers:
-    #     box_pose = geometry_msgs.msg.PoseStamped()
-    #     box_pose.header.frame_id = "base_link"
-    #     box_pose.pose.orientation.w = 1.0
-    #     box_pose.pose.position.x = 0
-    #     box_pose.pose.position.y = 0.6
-    #     box_pose.pose.position.z = -0.01 # above the panda_hand frame
-    #     ground_name = "ground_plane"
-    #     scene.add_box(ground_name, box_pose, size=(1.9, 1.9, 0.01))
+        ## BEGIN_SUB_TUTORIAL add_box
+        ##
+        ## Adding Objects to the Planning Scene
+        ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ## First, we will create a box in the planning scene between the fingers:
+        box_pose = geometry_msgs.msg.PoseStamped()
+        box_pose.header.frame_id = "base_link"
+        box_pose.pose.orientation.w = 1.0
+        box_pose.pose.position.x = 0
+        box_pose.pose.position.y = 0.6
+        box_pose.pose.position.z = -0.01 # above the panda_hand frame
+        ground_name = "ground_plane"
+        scene.add_box(ground_name, box_pose, size=(1.9, 1.9, 0.01))
 
-    #     ## END_SUB_TUTORIAL
-    #     # Copy local variables back to class variables. In practice, you should use the class
-    #     # variables directly unless you have a good reason not to.
-    #     self.ground_name = ground_name
-    #     print("Objects in the scene : ",scene.get_known_object_names())
-    #     return self.wait_for_state_update(box_is_known=True, timeout=timeout)
+        ## END_SUB_TUTORIAL
+        # Copy local variables back to class variables. In practice, you should use the class
+        # variables directly unless you have a good reason not to.
+        self.ground_name = ground_name
+        print("Objects in the scene : ",scene.get_known_object_names())
+        return self.wait_for_state_update(box_is_known=True, timeout=timeout)
 
     def attach_box(self, timeout=4):
         # Copy class variables to local variables to make the web tutorials more clear.
@@ -551,7 +551,7 @@ def main():
         # input(
         #     "============ Press `Enter` to execute a movement using a joint state goal ..."
         # )
-        '''joint_goal=tutorial.set_angle_joints(65,78,37,32,127,-69)
+        '''joint_goal=tutorial.set_angle_joints(64,76,34,29,116,-70)
         tutorial.go_to_joint_state(joint_goal)
         input("Press enter to go to next position")
 
@@ -571,7 +571,7 @@ def main():
         tutorial.go_to_joint_state(joint_goal)
         input("Press enter to go to end treatment")'''
         # input("============ Press `Enter` to add a ground to the planning scene ...")
-        # tutorial.add_ground()
+        tutorial.add_ground()
         # input("============ Press `Enter` to add a box test to the planning scene ...")
         # tutorial.add_box_test()
         # input("============ Press `Enter` to add a box to the planning scene ...")
@@ -579,61 +579,74 @@ def main():
         #input("============ Going to five pose goal ...")
         waypoints = []
         pose_goal = geometry_msgs.msg.Pose()
-        pose_goal.orientation.x = -0.703
-        pose_goal.orientation.y = -0.004
-        pose_goal.orientation.z = math.sqrt(1-(0.703**2+0.004**2+0.710**2))
-        pose_goal.orientation.w = 0.710
-        pose_goal.position.x = -0.001
-        pose_goal.position.y = 0.452
-        pose_goal.position.z = 0.100
-        waypoints.append(copy.deepcopy(pose_goal))
+        pose_goal.orientation.x = 0.743
+        pose_goal.orientation.y = -0.058
+        pose_goal.orientation.z = math.sqrt(1-(0.743**2+0.058**2+0.430**2))
+        pose_goal.orientation.w = -0.430
+        pose_goal.position.x = 0.552
+        pose_goal.position.y = 0.641
+        pose_goal.position.z = 0.471
+        #waypoints.append(copy.deepcopy(pose_goal))
         #tutorial.go_to_pose_goal(pose_goal)
 
         #input("Press enter to go to next position")
         #pose_goal = geometry_msgs.msg.Pose()
-        pose_goal.orientation.x = 0.698
-        pose_goal.orientation.y = -0.002
-        pose_goal.orientation.z = math.sqrt(1-(0.698**2+0.002**2+0.1**2))
-        pose_goal.orientation.w = -0.1
-        pose_goal.position.x = -0.252
-        pose_goal.position.y = 0.591
-        pose_goal.position.z = 0.092
-        waypoints.append(copy.deepcopy(pose_goal))
-        #tutorial.go_to_pose_goal(pose_goal)
-        
-        # input("Press enter to go to next position")
-        #pose_goal = geometry_msgs.msg.Pose()
-        pose_goal.orientation.x = 0.559235
-        pose_goal.orientation.y = -0.462233
-        pose_goal.orientation.z = math.sqrt(1-(0.559235**2+0.462233**2+0.568953**2))
-        pose_goal.orientation.w = 0.568953
-        pose_goal.position.x = -0.00108904
-        pose_goal.position.y = 0.917796
-        pose_goal.position.z = 0.0795832
+        pose_goal.orientation.x = 0.844
+        pose_goal.orientation.y = -0.286
+        pose_goal.orientation.z = math.sqrt(1-(0.844**2+0.286**2+0.214**2))
+        pose_goal.orientation.w = -0.214
+        pose_goal.position.x = -0.188
+        pose_goal.position.y = 0.588
+        pose_goal.position.z = 0.193
         waypoints.append(copy.deepcopy(pose_goal))
         #tutorial.go_to_pose_goal(pose_goal)
         
         #input("Press enter to go to next position")
         #pose_goal = geometry_msgs.msg.Pose()
-        pose_goal.orientation.x = -0.012
-        pose_goal.orientation.y = -0.725
-        pose_goal.orientation.z = math.sqrt(1-(0.012**2+0.725**2+0.687**2))
-        pose_goal.orientation.w = 0.687
-        pose_goal.position.x = 0.278
-        pose_goal.position.y = 0.616
-        pose_goal.position.z = 0.096
+        pose_goal.orientation.x = 0.944
+        pose_goal.orientation.y = -0.219
+        pose_goal.orientation.z = math.sqrt(1-(0.944**2+0.219**2+0.202**2)) #0.327
+        pose_goal.orientation.w = -0.202
+        pose_goal.position.x = 0.021
+        pose_goal.position.y = 0.652
+        pose_goal.position.z = 0.300
+        waypoints.append(copy.deepcopy(pose_goal))
+        #tutorial.go_to_pose_goal(pose_goal)
+        
+
+        #input("Press enter to go to next position")
+        pose_goal = geometry_msgs.msg.Pose()
+        pose_goal.orientation.x = 0.962
+        pose_goal.orientation.y = -0.222
+        pose_goal.orientation.z = math.sqrt(1-(0.962**2+0.222**2+0.03299**2))
+        pose_goal.orientation.w = 0.03299
+        pose_goal.position.x = -0.04
+        pose_goal.position.y = 0.771
+        pose_goal.position.z = 0.244
         waypoints.append(copy.deepcopy(pose_goal))
         #tutorial.go_to_pose_goal(pose_goal)
 
         #input("Press enter to go to next position")
-        #pose_goal = geometry_msgs.msg.Pose()
-        pose_goal.orientation.x = 0.0007
-        pose_goal.orientation.y = 0.9993
-        pose_goal.orientation.z = math.sqrt(1-(0.0007**2+0.9993**2+0.003**2))
-        pose_goal.orientation.w = -0.003
-        pose_goal.position.x = -0.005
-        pose_goal.position.y = 0.601
-        pose_goal.position.z = 0.253
+        pose_goal = geometry_msgs.msg.Pose()
+        pose_goal.orientation.x = 0.962005
+        pose_goal.orientation.y = -0.222302
+        pose_goal.orientation.z = math.sqrt(1-(0.962005**2+0.222302**2+0.0323641**2))
+        pose_goal.orientation.w = 0.0323641
+        pose_goal.position.x = 0.205944
+        pose_goal.position.y = 0.663746
+        pose_goal.position.z = 0.334168
+        waypoints.append(copy.deepcopy(pose_goal))
+        #tutorial.go_to_pose_goal(pose_goal)
+
+        #input("Press enter to go to next position")
+        pose_goal = geometry_msgs.msg.Pose()
+        pose_goal.orientation.x = 0.97409
+        pose_goal.orientation.y = -0.224646
+        pose_goal.orientation.z = math.sqrt(1-(0.97409**2+0.224646**2+0.00249266**2))
+        pose_goal.orientation.w = 0.00249266
+        pose_goal.position.x = 0.088423
+        pose_goal.position.y = 0.56984
+        pose_goal.position.z = 0.245177
         waypoints.append(copy.deepcopy(pose_goal))
         #tutorial.go_to_pose_goal(pose_goal)
 
@@ -642,11 +655,12 @@ def main():
         
 
         #input("============ Press `Enter` to plan and display a Cartesian path ...")
-        #cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
+        cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
+        tutorial.execute_plan(cartesian_plan)
         #input("Press enter to end treatment")
         
         # input("============ Press `Enter` to plan and display a Cartesian path ...")
-        cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
+        # cartesian_plan, fraction = tutorial.plan_cartesian_path(waypoints)
         # input("Press enter to end treatment")
 
 #         '''input(
@@ -655,7 +669,7 @@ def main():
 #         tutorial.display_trajectory(cartesian_plan)
 
 #         # input("============ Press `Enter` to execute a saved path ...")
-#         # tutorial.execute_plan(cartesian_plan)
+        
 
 
 
