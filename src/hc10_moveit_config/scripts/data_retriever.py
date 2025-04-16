@@ -27,7 +27,7 @@ class Talker():
         header.frame_id = "base_link"
 
         cloud = pc2.create_cloud_xyz32(header, self.object)
-        
+
         self.publisher.publish(cloud)
         # print(cloud)
 

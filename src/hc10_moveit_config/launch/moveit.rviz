@@ -35,6 +35,21 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
+    - Class: rviz/Image
+      Name: Image
+      Image Topic: /camera/color/image_raw
+      Transport  Hint: raw
+      Queue Size: 2
+    - Class: rviz/PointCloud2
+      Enabled: true
+      Name: PointCloud2
+      Topic: /camera/depth/points
+      Queue Size: 10
+      Selectable: true
+      Style: Flat Squares
+      Size: 0.01
+      Alpha: 1
+      Decay Time: 0
     - Class: moveit_rviz_plugin/MotionPlanning
       Enabled: true
       Name: MotionPlanning
@@ -68,7 +83,7 @@ Visualization Manager:
       Robot Description: robot_description
       Scene Geometry:
         Scene Alpha: 1
-        Show Scene Geometry: true
+        Show Scene Geometry: false
         Voxel Coloring: Z-Axis
         Voxel Rendering: Occupied Voxels
       Scene Robot:
