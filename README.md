@@ -89,6 +89,10 @@ Nous allons passer sur chacun des onglets qui se trouve sur la gauche de la fen√
 - Choisir "tool0" dans "Parent Link"
 - Cliquer sur le bouton "Save"
 
+### Controllers
+
+- Cliquer sur le bouton "Auto Add FollowJointsTrajectory Controllers For Each Planning Group" (le controlleur sera ajouter automatiquement depuis notre package)
+
 ### Simulation (je ne sais pas si il est important de garder ce fichier URDF ou non)
 
 - Cliquer sur "Generate URDF"
