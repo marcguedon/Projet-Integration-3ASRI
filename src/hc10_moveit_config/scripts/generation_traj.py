@@ -638,7 +638,7 @@ def main():
         #tutorial.go_to_pose_goal(pose_goal)
 
         
-        input("Press enter to end treatment")
+        # input("Press enter to end treatment")
         
 
         #input("============ Press `Enter` to plan and display a Cartesian path ...")
