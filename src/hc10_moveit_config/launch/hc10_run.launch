@@ -1,5 +1,5 @@
 <launch>
   <include file="$(dirname)/demo_gazebo.launch"/>
-  <!-- <node name="hc10_simple_trajectory" pkg="hc10_moveit_config" type="generation_traj.py" respawn="true" output="screen" /> -->
+  <node name="hc10_simple_trajectory" pkg="hc10_moveit_config" type="generation_traj.py" respawn="true" output="screen" />
   <node name="pointcloud_saver" pkg="hc10_moveit_config" type="data_retriever.py" respawn="true" output="screen" />
 </launch>
